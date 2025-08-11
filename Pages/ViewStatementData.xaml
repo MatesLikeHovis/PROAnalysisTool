@@ -1,0 +1,33 @@
+﻿<Page x:Class="WPFBMI.Pages.ViewStatementData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBMI.Pages"
+        mc:Ignorable="d"
+        Title="ViewStatementData"
+        d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="StatementSelector" IsEditable="False" StaysOpenOnEdit="False" Focusable="True" 
+                  Grid.Row="1" SelectionChanged="UpdateSelection" DisplayMemberPath="name"/>
+        <DataGrid x:Name="TrackGrid" Grid.Row="2" ItemsSource="{Binding Items}" AutoGenerateColumns="False"
+              CanUserAddRows="False" CanUserDeleteRows="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Track" Binding="{Binding trackName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Root Track" Binding="{Binding rootTrackName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Royalty Amount" Binding="{Binding royalty_amount, StringFormat={}{0:C}}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Show" Binding="{Binding ShowName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Channel" Binding="{Binding ChannelName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Country" Binding="{Binding CountryName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Duration" Binding="{Binding AirTime}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Performances" Binding="{Binding PerfCounts}" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Page>
