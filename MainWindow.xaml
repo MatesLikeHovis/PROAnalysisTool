@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPFBMI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBMI"
+        mc:Ignorable="d"
+        Title="PRO Statement Analyzer" Height="750" Width="1400" >
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Load Statement CSV" Click="LoadCSVHandler"/>
+                <MenuItem Header="_Load Statement CSV Folder" Click="LoadCSVFolder" />
+                <MenuItem Header="_Load Metadata CSV" Click="LoadMetaHandler"/>
+                <MenuItem Header="_Preferences"/>
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Manage">
+                <MenuItem Header="_Assign Root Tracks" Click="AssignTracksHandler" />
+                <MenuItem Header="_Remove All Root Track Pairings" Click="RemoveRootTrackPairings" />
+                <MenuItem Header="_Edit Root Track Metadata" Click="EditMetadataHandler" />
+                <Separator />
+                <MenuItem Header="_Edit Genre List" Click="EditGenreList" />
+                <MenuItem Header="_Edit Subgenre List" Click="EditSubgenreList" />
+                <MenuItem Header="_Edit Library List" Click="EditLibraryList" />
+                <Separator />
+                <MenuItem Header="_Check Database Pairings" Click="CheckPairings" />
+            </MenuItem>
+            <MenuItem Header="_Reports">
+                <MenuItem Header="_Track Report" Click="TrackReportDisplay"/>
+                <Separator />
+                <MenuItem Header="_Album Revenue Report" Click="AlbumReportsDisplay"/>
+                <MenuItem Header="_Library Revenue Report" Click="LibraryReportsDisplay"/>
+                <MenuItem Header="_Genre Revenue Report" Click="GenreReportsDisplay"/>
+                <MenuItem Header="_Subgenre Revenue Report" Click="SubgenreReportsDisplay"/>
+                <MenuItem Header="_Country Revenue Report" Click="CountryReportsDisplay"/>
+                <Separator />
+                <MenuItem Header="_View Statement Data" Click="ViewStatementsDisplay"/>
+                <MenuItem Header="_Do Chart" Click="MakeChart"/>
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
+</Window>
